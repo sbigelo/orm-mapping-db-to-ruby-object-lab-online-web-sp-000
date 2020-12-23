@@ -89,7 +89,7 @@ class Student
 
   def self.first_X_students_in_grade_10(grade_x)
     sql = <<-SQL
-    SELECT * FROM students WHERE grade = 10 LIMIT 1
+    SELECT * FROM students WHERE grade = 10 
     SQL
     DB[:conn].execute(sql, grade_x).map do |row|
         self.new_from_db(row)
